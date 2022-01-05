@@ -6,7 +6,7 @@
   <link href="http://qianji2011.github.io/atom.xml" rel="self"/>
   
   <link href="http://qianji2011.github.io/"/>
-  <updated>2022-01-01T07:43:46.515Z</updated>
+  <updated>2022-01-05T14:54:53.076Z</updated>
   <id>http://qianji2011.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DDate移动端兼容性问题</title>
+    <link href="http://qianji2011.github.io/2022/01/05/DDate%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://qianji2011.github.io/2022/01/05/DDate%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</id>
+    <published>2022-01-05T08:51:02.000Z</published>
+    <updated>2022-01-05T14:54:53.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;开发过程中经常需要对日期数据进行操作，例如：格式化，计算时间差等。下面就是应用时间对象进行日期数据格式化的时候，移动端发现的兼容性问题&lt;/p&gt;
+&lt;h3 id=&quot;原时间处理代码&quot;&gt;&lt;a href=&quot;#原时间处理代码&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Object.assign移动端兼容性问题</title>
