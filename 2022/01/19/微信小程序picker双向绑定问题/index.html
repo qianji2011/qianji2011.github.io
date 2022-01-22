@@ -21,23 +21,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qianji2011.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="养鱼的猫">
-<meta property="og:url" content="http://qianji2011.github.io/index.html">
+<meta name="description" content="微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。其中，在微信开放文档上，有这么一段描述 哦豁，原来有双向绑定，那就用起来。然而，实际应用的时候，部分手机型号并不支持这样的写法 问题出现的场景废话不多说，直接上代码  wxml代码 1234567891011121314151617&lt;van-field  required  is-link  label&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序picker双向绑定问题">
+<meta property="og:url" content="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="养鱼的猫">
+<meta property="og:description" content="微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。其中，在微信开放文档上，有这么一段描述 哦豁，原来有双向绑定，那就用起来。然而，实际应用的时候，部分手机型号并不支持这样的写法 问题出现的场景废话不多说，直接上代码  wxml代码 1234567891011121314151617&lt;van-field  required  is-link  label&#x3D;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/ed07b781bb8f31d9.png">
+<meta property="article:published_time" content="2022-01-19T07:55:09.000Z">
+<meta property="article:modified_time" content="2022-01-22T07:47:06.766Z">
 <meta property="article:author" content="养鱼的猫">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/ed07b781bb8f31d9.png">
 
 
-<link rel="canonical" href="http://qianji2011.github.io/">
+<link rel="canonical" href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/","path":"2022/01/19/微信小程序picker双向绑定问题/","title":"微信小程序picker双向绑定问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>养鱼的猫</title>
+<title>微信小程序picker双向绑定问题 | 养鱼的猫</title>
   
 
 
@@ -67,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">养鱼的猫</h1>
+      <p class="site-title">养鱼的猫</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">最近，却又是最远</p>
@@ -105,7 +111,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -118,6 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%87%BA%E7%8E%B0%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">问题出现的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D"><span class="nav-number">2.</span> <span class="nav-text">问题定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,16 +168,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -183,9 +191,9 @@
       <meta itemprop="name" content="养鱼的猫">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">微信小程序picker双向绑定问题</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          微信小程序picker双向绑定问题
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -215,7 +223,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。<br>其中，在<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html">微信开放文档</a>上，有这么一段描述</p>
+        <p>微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。<br>其中，在<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html">微信开放文档</a>上，有这么一段描述</p>
 <p><img src="https://s3.bmp.ovh/imgs/2022/01/ed07b781bb8f31d9.png" alt="简易双向绑定"><br>哦豁，原来有双向绑定，那就用起来。然而，实际应用的时候，部分手机型号并不支持这样的写法</p>
 <h3 id="问题出现的场景"><a href="#问题出现的场景" class="headerlink" title="问题出现的场景"></a>问题出现的场景</h3><p>废话不多说，直接上代码</p>
 <ul>
@@ -236,7 +244,6 @@
 </ul>
 <p>这样就完美解决了这个问题。<br>小程序发布后，经过长时间检测，没有用户反馈出现这个问题了。<br>所以，有些功能还是老老实实自己码代码实现。特别是官方例子里面没有使用的，不要盲目自信的添加到项目中，谁知道会不会出什么幺蛾子呢</p>
 
-      
     </div>
 
     
@@ -244,166 +251,39 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/05/Date%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" rel="prev" title="Date移动端兼容性问题">
+                  <i class="fa fa-chevron-left"></i> Date移动端兼容性问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2022/01/05/Date%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/finshing.jpeg">
-      <meta itemprop="name" content="养鱼的猫">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="养鱼的猫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/05/Date%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Date移动端兼容性问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-05 16:51:02" itemprop="dateCreated datePublished" datetime="2022-01-05T16:51:02+08:00">2022-01-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-20 23:00:21" itemprop="dateModified" datetime="2022-01-20T23:00:21+08:00">2022-01-20</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>开发过程中经常需要对日期数据进行操作，例如：格式化，计算时间差等。下面就是应用时间对象进行日期数据格式化的时候，移动端发现的兼容性问题</p>
-<h3 id="原时间处理代码"><a href="#原时间处理代码" class="headerlink" title="原时间处理代码"></a>原时间处理代码</h3><p>对于 YYYY-MM-DD 的日期格式，new Date() 方法在某些系统中会产生兼容性问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 需要处理的日期数据</span><br><span class="line">const date = <span class="string">&#x27;2021-01-09 12:09:08&#x27;</span></span><br><span class="line">// 使用Date对象处理数据</span><br><span class="line">const timer = new Date(date) // 在某些型号的手机上面，这个表达式的计算结果得到的是Invalid Date</span><br><span class="line">// 对时间数据进行处理</span><br><span class="line">const year = timer.getFullYear() // 此处省略</span><br></pre></td></tr></table></figure>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>使用replace方法，将日期数据内的’-‘替换成’/‘</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 需要处理的日期数据</span><br><span class="line">const date = <span class="string">&#x27;2021-01-09 12:09:08&#x27;</span></span><br><span class="line">// 将 - 替换成 /</span><br><span class="line">const dateNew = date.replace(/-/g,<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">// 使用Date对象处理数据</span><br><span class="line">const timer = new Date(dateNew)</span><br><span class="line">// 对时间数据进行处理</span><br><span class="line">const year = timer.getFullYear() // 此处省略</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以解决new Date()方法的兼容性问题了</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/finshing.jpeg">
-      <meta itemprop="name" content="养鱼的猫">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="养鱼的猫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Object.assign移动端兼容性问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-12-24 17:31:16" itemprop="dateCreated datePublished" datetime="2021-12-24T17:31:16+08:00">2021-12-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-01 15:43:46" itemprop="dateModified" datetime="2022-01-01T15:43:46+08:00">2022-01-01</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="问题产生的场景"><a href="#问题产生的场景" class="headerlink" title="问题产生的场景"></a>问题产生的场景</h2><p>开发微信小程序的时候，存在用户注册的场景。用户注册一共有两个页面：第一页是基本信息，第二页需要填详细信息，从第一个页面跳转到第二个页面的时候，将多个参数整合到一个对象里面，再把这个对象传递到下个页面。但是部分手机会出现参数缺失的情况</p>
-<h3 id="问题产生的原因"><a href="#问题产生的原因" class="headerlink" title="问题产生的原因"></a>问题产生的原因</h3><p>第一个页面，处理参数的方法是这样的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const params = Object.assign(&#123;</span><br><span class="line">    name: this.data.userName</span><br><span class="line">&#125;, this.data.baseInfo, &#123;</span><br><span class="line">    mobile: this.data.mobile</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>某些型号的手机，进入到第二个页面后，在控制台打印传递过来的是个空对象！！！<br>没错，就是Object.assign()这个方法存在兼容性问题，部分手机型号是不支持这个语法的</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>以下提供两种解决方案</p>
-<h4 id="一、注意罗列属性并给对应属性赋值"><a href="#一、注意罗列属性并给对应属性赋值" class="headerlink" title="一、注意罗列属性并给对应属性赋值"></a>一、注意罗列属性并给对应属性赋值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const &#123; name, mobile, baseInfo &#125; = this.data</span><br><span class="line"><span class="built_in">let</span> params = &#123;</span><br><span class="line">    ...baseInfo</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!params.name) &#123;</span><br><span class="line">    params.name = name</span><br><span class="line">&#125;</span><br><span class="line">params.mobile = mobile</span><br></pre></td></tr></table></figure>
-
-<h4 id="二、-先判断是否有这个方法，如果没有则添加方法"><a href="#二、-先判断是否有这个方法，如果没有则添加方法" class="headerlink" title="二、 先判断是否有这个方法，如果没有则添加方法"></a>二、 先判断是否有这个方法，如果没有则添加方法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (typeof Object.assign !=== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    (<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        Object.assign = <span class="keyword">function</span>(target) &#123;</span><br><span class="line">            <span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(target === undefined || target === null) &#123;</span><br><span class="line">                throw new TypeError(<span class="string">&#x27;cannot cover undefined or null to Object&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            var output = Object(target)</span><br><span class="line">            <span class="keyword">for</span>(var i =1; i &lt; arguments.length; i++) &#123;</span><br><span class="line">                var sources = arguments[i]</span><br><span class="line">                <span class="keyword">for</span>(var key <span class="keyword">in</span> sources) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(sources.hasOwnProperty(key))&#123;</span><br><span class="line">                        output[key] = sources[key]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">return</span> output</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
