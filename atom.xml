@@ -6,7 +6,7 @@
   <link href="http://qianji2011.github.io/atom.xml" rel="self"/>
   
   <link href="http://qianji2011.github.io/"/>
-  <updated>2022-01-22T07:47:06.766Z</updated>
+  <updated>2022-01-30T14:36:49.346Z</updated>
   <id>http://qianji2011.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack+vue最详细搭建教程</title>
+    <link href="http://qianji2011.github.io/2022/01/28/webpack-vue%E6%9C%80%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    <id>http://qianji2011.github.io/2022/01/28/webpack-vue%E6%9C%80%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</id>
+    <published>2022-01-28T15:20:47.000Z</published>
+    <updated>2022-01-30T14:36:49.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;基础环境&quot;&gt;&lt;a href=&quot;#基础环境&quot; class=&quot;headerlink&quot; title=&quot;基础环境&quot;&gt;&lt;/a&gt;基础环境&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用的最新版本webpack5+，要求安装&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="webpack" scheme="http://qianji2011.github.io/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序picker双向绑定问题</title>
@@ -64,14 +88,14 @@
     <link href="http://qianji2011.github.io/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>http://qianji2011.github.io/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</id>
     <published>2021-12-24T09:31:16.000Z</published>
-    <updated>2022-01-01T07:43:46.515Z</updated>
+    <updated>2022-01-28T15:22:51.953Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题产生的场景&quot;&gt;&lt;a href=&quot;#问题产生的场景&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;问题产生的场景&quot;&gt;&lt;a href=&quot;#问题产生的场景&quot; class=&quot;headerlink&quot;</summary>
         
       
     
