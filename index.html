@@ -134,13 +134,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -169,6 +174,96 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2022/02/17/replaceAll%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/finshing.jpeg">
+      <meta itemprop="name" content="养鱼的猫">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="养鱼的猫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/17/replaceAll%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">replaceAll兼容性问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-17 18:00:04" itemprop="dateCreated datePublished" datetime="2022-02-17T18:00:04+08:00">2022-02-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-20 23:18:21" itemprop="dateModified" datetime="2022-02-20T23:18:21+08:00">2022-02-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>汗颜呐，一直以为replace和replaceAll没有兼容性问题。然而，还是太年轻了。</p>
+<h3 id="问题产生的场景"><a href="#问题产生的场景" class="headerlink" title="问题产生的场景"></a>问题产生的场景</h3><ul>
+<li>场景一<br>开发微信小程序的时候，通常需要对url中携带的参数进行编码和解码。如果使用encodeURIComponent方法对包含%的参数进行编码后,再直接使用decodeURIComponent方法进行解码，这个时候有部分手机报错了，解析参数异常。这个时候需要将%替换成%25。字符串替换嘛，立马想到了使用replaceAll。上了体验版，并在不同的测试机测试没问题之后就发布到正式环境。发现问题还是需要广大人民群众的力量。不久，就有用户反馈问题，根据截图，一度怀疑是decodeURIComponent又问题</li>
+<li>场景二<br>同样是开发微信小程序，需要接口返回数据做处理，将字符串中的-字符全部转换成/，也是习惯吧，当即使用了replaceAll。最后还是实际出真知，又被告知部分用户数据展示不正确。</li>
+</ul>
+<h3 id="问题产生的原因"><a href="#问题产生的原因" class="headerlink" title="问题产生的原因"></a>问题产生的原因</h3><p>遇到上述场景一的问题的时候，并没有怀疑是replaceAll有兼容性问题，只是换成调用接口获取页面参数，曲线救国，并没有根本解决问题。之后，遇到场景二，才慢慢排除，并联想到两个场景的共同点是使用了replaceAll方法。这个时候才恍然大悟，哦，原来是这个地方有问题！</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>以场景一为例，产生问题的代码如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// url原始路径</span><br><span class="line">const urlAfter = url.replaceAll(<span class="string">&#x27;%&#x27;</span>,<span class="string">&#x27;%25&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>将replaceAll替换为replace，并使用正则匹配%</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// url原始路径</span><br><span class="line">const urlAfter = url.replace(/%/g,<span class="string">&#x27;%25&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这样就解决了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -209,8 +304,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-30 22:36:49" itemprop="dateModified" datetime="2022-01-30T22:36:49+08:00">2022-01-30</time>
+        <time title="修改时间：2022-02-17 17:58:03" itemprop="dateModified" datetime="2022-02-17T17:58:03+08:00">2022-02-17</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -339,8 +443,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-22 15:47:06" itemprop="dateModified" datetime="2022-01-22T15:47:06+08:00">2022-01-22</time>
+        <time title="修改时间：2022-02-17 17:57:27" itemprop="dateModified" datetime="2022-02-17T17:57:27+08:00">2022-02-17</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -429,8 +542,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-20 23:00:21" itemprop="dateModified" datetime="2022-01-20T23:00:21+08:00">2022-01-20</time>
+        <time title="修改时间：2022-02-17 17:57:34" itemprop="dateModified" datetime="2022-02-17T17:57:34+08:00">2022-02-17</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -506,8 +628,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-28 23:22:51" itemprop="dateModified" datetime="2022-01-28T23:22:51+08:00">2022-01-28</time>
+        <time title="修改时间：2022-02-17 17:57:38" itemprop="dateModified" datetime="2022-02-17T17:57:38+08:00">2022-02-17</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
 
   
 </div>
