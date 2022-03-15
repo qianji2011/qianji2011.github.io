@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "hexo-theme-next@8.8.2",
+      "D:\\project\\hexo\\qianji2011.github.io"
+    ]
+  ],
+  "_from": "hexo-theme-next@8.8.2",
+  "_id": "hexo-theme-next@8.8.2",
+  "_inBundle": false,
+  "_integrity": "sha512-eXpou/NG1ZdYTVRmntpsh1YpQ/P0mlyUb3mas3VQ4qoW7Ky3bGE5+/zB5A53D6l6PBe/UUco4kK9NlNWqRj14A==",
+  "_location": "/hexo-theme-next",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "hexo-theme-next@8.8.2",
+    "name": "hexo-theme-next",
+    "escapedName": "hexo-theme-next",
+    "rawSpec": "8.8.2",
+    "saveSpec": null,
+    "fetchSpec": "8.8.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmmirror.com/hexo-theme-next/download/hexo-theme-next-8.8.2.tgz",
+  "_spec": "8.8.2",
+  "_where": "D:\\project\\hexo\\qianji2011.github.io",
+  "author": {
+    "name": "NexT",
+    "url": "https://theme-next.js.org"
+  },
+  "bugs": {
+    "url": "https://github.com/next-theme/hexo-theme-next/issues"
+  },
+  "description": "Elegant and powerful theme for Hexo.",
+  "devDependencies": {
+    "@next-theme/eslint-config": "0.0.3",
+    "chai": "4.3.4",
+    "eslint": "8.3.0",
+    "hexo": "5.4.0",
+    "hexo-renderer-marked": "4.1.0",
+    "js-yaml": "4.1.0",
+    "mocha": "9.1.3",
+    "nyc": "15.1.0",
+    "stylint": "2.0.0"
+  },
+  "files": [
+    "docs",
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "_config.yml",
+    "_vendors.yml"
+  ],
+  "homepage": "https://theme-next.js.org",
+  "keywords": [
+    "hexo",
+    "theme",
+    "next"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "main": "package.json",
+  "name": "hexo-theme-next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/next-theme/hexo-theme-next.git"
+  },
+  "scripts": {
+    "eslint": "eslint scripts/ source/js test/",
+    "prepare": "node .githooks/install.js",
+    "stylint": "stylint source/css/",
+    "test": "mocha test/index.js",
+    "test-cov": "nyc npm test"
+  },
+  "version": "8.8.2"
+}
