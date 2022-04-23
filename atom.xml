@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>养鱼的猫</title>
+  
+  <subtitle>最近，却又是最远</subtitle>
+  <link href="http://qianji2011.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://qianji2011.github.io/"/>
+  <updated>2022-04-23T15:57:26.620Z</updated>
+  <id>http://qianji2011.github.io/</id>
+  
+  <author>
+    <name>养鱼的猫</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css样式反圆角</title>
+    <link href="http://qianji2011.github.io/2022/04/23/css%E6%A0%B7%E5%BC%8F%E5%8F%8D%E5%9C%86%E8%A7%92/"/>
+    <id>http://qianji2011.github.io/2022/04/23/css%E6%A0%B7%E5%BC%8F%E5%8F%8D%E5%9C%86%E8%A7%92/</id>
+    <published>2022-04-23T15:05:07.000Z</published>
+    <updated>2022-04-23T15:57:26.620Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一般css样式中，使用比较多的是圆角,也就是border-radius，这个是圆心朝向矩形内部的。今天需要实现的是反圆角，也就是圆心朝外的圆角。&lt;/p&gt;
+&lt;h3 id=&quot;1-要实现的效果&quot;&gt;&lt;a href=&quot;#1-要实现的效果&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="css" scheme="http://qianji2011.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>replaceAll兼容性问题</title>
+    <link href="http://qianji2011.github.io/2022/02/17/replaceAll%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://qianji2011.github.io/2022/02/17/replaceAll%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</id>
+    <published>2022-02-17T10:00:04.000Z</published>
+    <updated>2022-03-15T14:03:20.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;汗颜呐，一直以为replace和replaceAll没有兼容性问题。然而，还是太年轻了。&lt;/p&gt;
+&lt;h3 id=&quot;问题产生的场景&quot;&gt;&lt;a href=&quot;#问题产生的场景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="http://qianji2011.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="微信小程序" scheme="http://qianji2011.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack+vue最详细搭建教程</title>
+    <link href="http://qianji2011.github.io/2022/01/28/webpack-vue%E6%9C%80%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    <id>http://qianji2011.github.io/2022/01/28/webpack-vue%E6%9C%80%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</id>
+    <published>2022-01-28T15:20:47.000Z</published>
+    <updated>2022-03-15T14:03:20.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;基础环境&quot;&gt;&lt;a href=&quot;#基础环境&quot; class=&quot;headerlink&quot; title=&quot;基础环境&quot;&gt;&lt;/a&gt;基础环境&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用的最新版本webpack5+，要求安装&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="http://qianji2011.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="webpack" scheme="http://qianji2011.github.io/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序picker双向绑定问题</title>
+    <link href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/"/>
+    <id>http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/</id>
+    <published>2022-01-19T07:55:09.000Z</published>
+    <updated>2022-03-15T14:03:20.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。&lt;br&gt;其中，在&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="http://qianji2011.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="微信小程序" scheme="http://qianji2011.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Date移动端兼容性问题</title>
+    <link href="http://qianji2011.github.io/2022/01/05/Date%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://qianji2011.github.io/2022/01/05/Date%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</id>
+    <published>2022-01-05T08:51:02.000Z</published>
+    <updated>2022-03-15T14:03:20.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;开发过程中经常需要对日期数据进行操作，例如：格式化，计算时间差等。下面就是应用时间对象进行日期数据格式化的时候，移动端发现的兼容性问题&lt;/p&gt;
+&lt;h3 id=&quot;原时间处理代码&quot;&gt;&lt;a href=&quot;#原时间处理代码&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="http://qianji2011.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="微信小程序" scheme="http://qianji2011.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Object.assign移动端兼容性问题</title>
+    <link href="http://qianji2011.github.io/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://qianji2011.github.io/2021/12/24/Object-assign%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</id>
+    <published>2021-12-24T09:31:16.000Z</published>
+    <updated>2022-03-15T14:03:20.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;问题产生的场景&quot;&gt;&lt;a href=&quot;#问题产生的场景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="http://qianji2011.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="微信小程序" scheme="http://qianji2011.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+</feed>
