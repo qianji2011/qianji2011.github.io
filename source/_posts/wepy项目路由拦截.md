@@ -59,7 +59,7 @@ Page(filter.routerFilter({
 ```
 
 ### 方案二：wepy框架里面的api拦截
-参看[wepy官方文档有关拦截器的介绍](https://wepyjs.gitee.io/wepy-docs/1.x/#/?id=interceptor-%e6%8b%a6%e6%88%aa%e5%99%a8)，进行如下代码设置
+- 参看[wepy官方文档有关拦截器的介绍](https://wepyjs.gitee.io/wepy-docs/1.x/#/?id=interceptor-%e6%8b%a6%e6%88%aa%e5%99%a8)，进行如下代码设置
 
 ``` bash
 // app.wpy
@@ -90,7 +90,7 @@ Page(filter.routerFilter({
     }
   }
 ```
-针对公众号及二维码等其他方式进入小程序指定页面的场景，需要在具体页面进行拦截。
+- 针对公众号及二维码等其他方式进入小程序指定页面的场景，需要在具体页面进行拦截。
 参照官网中关于[Mixin 混合](https://wepyjs.gitee.io/wepy-docs/1.x/#/?id=mixin-%e6%b7%b7%e5%90%88)，进行设计
 ``` bash
 // /mixins/building.js
