@@ -23,7 +23,7 @@
 <meta name="description" content="微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。其中，在微信开放文档上，有这么一段描述 哦豁，原来有双向绑定，那就用起来。然而，实际应用的时候，部分手机型号并不支持这样的写法 问题出现的场景废话不多说，直接上代码  wxml代码 1234567891011121314151617&lt;van-field  required  is-link  label&#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序picker双向绑定问题">
-<meta property="og:url" content="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="http://qianji2011.github.io/2022/01/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="养鱼的猫">
 <meta property="og:description" content="微信小程序开发过程中，通常会使用下拉框组件picker，进行时间，三级省市区等数据选择。其中，在微信开放文档上，有这么一段描述 哦豁，原来有双向绑定，那就用起来。然而，实际应用的时候，部分手机型号并不支持这样的写法 问题出现的场景废话不多说，直接上代码  wxml代码 1234567891011121314151617&lt;van-field  required  is-link  label&#x3D;">
 <meta property="og:locale" content="zh_CN">
@@ -36,11 +36,11 @@
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/ed07b781bb8f31d9.png">
 
 
-<link rel="canonical" href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="http://qianji2011.github.io/2022/01/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/","path":"2022/01/19/微信小程序picker双向绑定问题/","title":"微信小程序picker双向绑定问题"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://qianji2011.github.io/2022/01/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/","path":"2022/01/18/微信小程序picker双向绑定问题/","title":"微信小程序picker双向绑定问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>微信小程序picker双向绑定问题 | 养鱼的猫</title>
@@ -139,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -192,7 +192,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2022/01/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/fishingCat.jpeg">
@@ -282,7 +282,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://qianji2011.github.io/2022/01/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/" title="微信小程序picker双向绑定问题">http://qianji2011.github.io/2022/01/19/微信小程序picker双向绑定问题/</a>
+      <a href="http://qianji2011.github.io/2022/01/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fpicker%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/" title="微信小程序picker双向绑定问题">http://qianji2011.github.io/2022/01/18/微信小程序picker双向绑定问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -343,7 +343,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
