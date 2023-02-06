@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -142,7 +142,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -183,6 +183,102 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2023/02/02/npm%E5%8F%91%E5%B8%83%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/fishingCat.jpeg">
+      <meta itemprop="name" content="养鱼的猫">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="养鱼的猫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/02/npm%E5%8F%91%E5%B8%83%E5%8C%85/" class="post-title-link" itemprop="url">npm发布包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-02 22:30:48" itemprop="dateCreated datePublished" datetime="2023-02-02T22:30:48+08:00">2023-02-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-02-06 10:52:19" itemprop="dateModified" datetime="2023-02-06T10:52:19+08:00">2023-02-06</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>主要介绍npm上面进行包上传的步骤</p>
+<h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><ul>
+<li>安装nodejs</li>
+<li>会使用npm命令</li>
+</ul>
+<h2 id="npm包下载源查看和设置"><a href="#npm包下载源查看和设置" class="headerlink" title="npm包下载源查看和设置"></a>npm包下载源查看和设置</h2><p>需要按如下步骤设置源为<a target="_blank" rel="noopener" href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1.检查当前下载源</span><br><span class="line">&gt; npm config get registry</span><br><span class="line">https://registry.npmjs.org/    </span><br><span class="line"></span><br><span class="line">// 2.如果第一步得到的下载源不是https://registry.npmjs.org/，需要进行设置，否则跳过</span><br><span class="line">&gt; npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><ul>
+<li>打开你的终端，在指定文件夹下输入下面命令创建文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// mkdir 文件夹名称</span><br><span class="line">mkdir test-project</span><br></pre></td></tr></table></figure></li>
+<li>进入上一步创建的文件夹test-project<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> test-project</span><br></pre></td></tr></table></figure></li>
+<li>创建npm项目<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+创建的项目里面,package.json文件内容如下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;test-project&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;keywords&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>创建代码文件<br>在test-project文件夹内常见bin目录，并创建index.js，其中代码如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// bin/index.js</span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line">console.log(<span class="string">&#x27;Welcome to the new project&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>其中 #!/usr/bin/env node 是为了指定运行环境</p>
+<ul>
+<li>修改package.json<br>修改后的文件如下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;test-project&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;main&quot;</span>: <span class="string">&quot;./bin/index.js&quot;</span>,</span><br><span class="line">  <span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test-project&quot;</span>: <span class="string">&quot;./bin/index.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;keywords&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建npm账号"><a href="#创建npm账号" class="headerlink" title="创建npm账号"></a>创建npm账号</h2></li>
+<li>进入<a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm官网</a>进行账号注册</li>
+<li>打开终端，登录npm账号，相关指令如下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm login</span><br><span class="line">npm notice Log <span class="keyword">in</span> on https://registry.npmjs.org/</span><br><span class="line">Username:     // 输入你的npm账号用户名</span><br><span class="line">Password:     // 登录密码</span><br><span class="line">Email: (this IS public) &lt;email address&gt;        // 注册用的邮箱</span><br><span class="line">npm notice Please use the one-time password (OTP) from your authenticator application</span><br><span class="line">Enter one-time password from our authenticator app: &lt;OTP&gt;     // 邮箱收到的验证码</span><br><span class="line">Logged <span class="keyword">in</span> as clarkio on https://registry.npmjs.org/.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="发布包"><a href="#发布包" class="headerlink" title="发布包"></a>发布包</h2><ul>
+<li>使用npm publish命令发布包</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://qianji2011.github.io/2023/01/06/wepy%E9%A1%B9%E7%9B%AE%E8%B7%AF%E7%94%B1%E6%8B%A6%E6%88%AA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,7 +310,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2023-01-30 17:57:21" itemprop="dateModified" datetime="2023-01-30T17:57:21+08:00">2023-01-30</time>
+        <time title="修改时间：2023-01-30 18:06:57" itemprop="dateModified" datetime="2023-01-30T18:06:57+08:00">2023-01-30</time>
       </span>
 
   
